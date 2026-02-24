@@ -1,68 +1,94 @@
 # Appointment Booking System
 
-## Pages & Features
+Full-featured appointment scheduling and booking management system.
 
-### 1. Public Booking Page
-- Service selection with descriptions & durations
-- Provider / staff selection
-- Available time slot picker (calendar view)
-- Client info form (name, email, phone)
-- Booking confirmation with details
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Dashboard (Admin)
-- Today's bookings overview
-- Upcoming appointments list
-- Cancellation / no-show count
-- Revenue from bookings this period
+## Tech Stack
 
-### 3. Calendar
-- Day / week / month view of all appointments
-- Filter by provider, service, or status
-- Drag-and-drop rescheduling
-- Color-coded by service type
-- Block off unavailable time
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Appointments
-- Appointment list with search & filters
-- Appointment detail: client, service, provider, status, notes
-- Status workflow (booked → confirmed → completed / no-show / cancelled)
-- Send confirmation / reminder notifications
-- Walk-in booking quick-add
+## Getting Started
 
-### 5. Services
-- Define services with name, description, duration, price
-- Service categories
-- Buffer time between appointments
-- Group / class bookings support
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Providers / Staff
-- Staff profiles with services they offer
-- Individual availability schedule (working hours, days off)
-- Assign services to providers
-- Staff performance metrics
+## License
 
-### 7. Clients
-- Client directory with contact info
-- Booking history per client
-- Client notes & preferences
-- Loyalty / visit count tracking
+MIT © Mehdi Nabhani
 
-### 8. Notifications
-- Automated booking confirmation (email / SMS)
-- Reminder notifications (24h / 1h before)
-- Cancellation / reschedule notifications
-- Follow-up messages after appointment
+---
 
-### 9. Reports
-- Booking volume by day / week / month
-- Revenue by service & provider
-- No-show & cancellation rates
-- Peak hours analysis
-- Export as PDF / CSV
+<details>
+<summary>📋 Original Feature Spec</summary>
 
-### 10. Settings
-- Business profile (name, address, timezone)
-- Booking policies (cancellation window, max advance booking)
-- Working hours & holidays
-- Payment & deposit configuration
-- Widget embed code for external websites
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
